@@ -78,6 +78,15 @@ for fn in sorted(os.listdir(AG)) if os.path.isdir(AG) else []:
             errors.append(f"agents/{fn}: skill '{s}' sets disable-model-invocation and can't be preloaded")
         used.setdefault(s, []).append(n)
     if len(body.strip()) < 200: warnings.append(f"agents/{fn}: system prompt looks very short")
+    if m.get("model") not in ("opus", "sonnet", "haiku", "fable", "inherit") and not str(m.get("model", "")).startswith("claude-"):
+        errors.append(f"agents/{fn}: model must be set (opus/sonnet/haiku), got {m.get('model')!r}")
+    kdir = os.path.join(ROOT, "knowledge", n)
+    if not os.path.isfile(os.path.join(kdir, "README.md")):
+        errors.append(f"agents/{fn}: missing knowledge/{n}/README.md")
+    if f"knowledge/{n}/" not in body:
+        errors.append(f"agents/{fn}: prompt doesn't tell the agent to read knowledge/{n}/")
+    if "## Personality" not in body:
+        errors.append(f"agents/{fn}: missing Personality section")
     agents[n] = m
 
 # Forked skills must point to existing agents
@@ -102,6 +111,10 @@ if os.path.isfile(ROUTING):
             warnings.append(f"expert-team-routing: references unknown agent '{ref}'")
 else:
     errors.append("expert-team-routing skill is missing")
+
+for d in sorted(os.listdir(os.path.join(ROOT, "knowledge"))) if os.path.isdir(os.path.join(ROOT, "knowledge")) else []:
+    if os.path.isdir(os.path.join(ROOT, "knowledge", d)) and d not in agents:
+        warnings.append(f"knowledge/{d}: no agent with this name")
 
 if not 10 <= len(agents) <= 50:
     errors.append(f"team size {len(agents)} is outside the 10-50 target")

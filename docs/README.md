@@ -30,6 +30,7 @@ bookstores, online retailers and libraries.
 | 8 | Biggest risks | [08-risks.md](08-risks.md) | Ranked risk register with mitigations |
 | — | **Expert roster** | [expert-roster.md](expert-roster.md) | 25 expert agent roles + 35 shared skills, with which agents use each skill |
 | — | **How to talk to your experts** | [how-to-talk-to-your-experts.md](how-to-talk-to-your-experts.md) | Example prompts for single experts, the orchestrator, and the whole team |
+| — | **Agent brains & personalities** | [agent-brains.md](agent-brains.md) | Each agent's model (Opus/Sonnet/Haiku) with the reason, plus its name, voice, and working style |
 | — | **Agent team** | [../CLAUDE.md](../CLAUDE.md) | How to use the 27 built agents and 40 skills in `.claude/` |
 
 ## Key takeaways

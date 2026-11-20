@@ -15,7 +15,8 @@ metadata:
 - Agents: `.claude/agents/<agent-name>.md`
 - Skills: `.claude/skills/<skill-name>/SKILL.md` (plus optional supporting files in the same folder)
 - Validator: `python3 .claude/scripts/validate_team.py`
-- Team docs to keep in sync: `docs/expert-roster.md`, `.claude/skills/expert-team-routing/SKILL.md`, `CLAUDE.md`
+- Agent knowledge folders: `knowledge/<agent-name>/`
+- Team docs to keep in sync: `docs/expert-roster.md`, `docs/agent-brains.md`, `.claude/skills/expert-team-routing/SKILL.md`, `CLAUDE.md`
 - **Never write to `~/.claude/`** or anywhere outside this repository.
 
 ## Subagent file rules (Claude Code docs: sub-agents)
@@ -24,8 +25,10 @@ metadata:
 - `description`: say **when Claude should delegate**. Start with the one-line job, then trigger topics.
 - `tools`: an allowlist. Experts use `Read, Grep, Glob, WebSearch, WebFetch, Write, Edit, Skill` (+ `Bash` for modeling). Only the orchestrator gets `Agent`.
 - `skills`: a YAML list of skill names to **preload** (full content injected; first 32 names only). Every expert gets `project-research-library`.
-- Optional fields used here: `model: inherit`, `color` (domain color), `effort`.
-- The body is the system prompt. Follow the house template: Role → Mission → What you own → Your skills → How you work → Output → Boundaries → Collaborators.
+- `model`: **always set it explicitly**. Use `opus` for deep strategy, legal, finance and coordination judgment; `sonnet` for most specialist work; `haiku` for fast, simple lookups. Record the choice and the reason in `docs/agent-brains.md`.
+- Optional fields used here: `color` (domain color), `effort`.
+- The body is the system prompt. Follow the house template: Role → Mission → What you own → Your skills → **Personality** (a distinct first name, voice and working style) → **Before every answer: read your knowledge folder** (`knowledge/<agent-name>/`) → How you work → Output → Boundaries → Collaborators.
+- Every agent needs `knowledge/<agent-name>/README.md` listing what documents belong there.
 
 ## Skill file rules (Claude Code docs: skills)
 - `SKILL.md` with frontmatter. `description` is recommended: put the key use case first. The description plus `when_to_use` is truncated at 1,536 characters.
@@ -42,8 +45,9 @@ metadata:
 3. List its skills: reuse existing skills first, and create new ones only for genuinely new methods.
 4. Write the agent file using the template, preloading `project-research-library` + its skills.
 5. Add the agent to each reused skill's `metadata.used-by` and its "Preloaded into" line.
-6. Update `expert-team-routing` (Experts table and any panels), `docs/expert-roster.md` (Parts 1–3 + Part 4), and the `CLAUDE.md` team table.
-7. Run the validator and fix every error.
+6. Create `knowledge/<agent-name>/README.md`, and add a row (name, brain, reason, voice, style) to `docs/agent-brains.md`.
+7. Update `expert-team-routing` (Experts table and any panels), `docs/expert-roster.md` (Parts 1–3 + Part 4), and the `CLAUDE.md` team table.
+8. Run the validator and fix every error.
 
 ## Create a new skill
 1. Name it, write the description (what + when), and write the body using the house structure.
@@ -60,6 +64,7 @@ metadata:
 - [ ] The description clearly says when to use it
 - [ ] Facts cite `docs/` or a source, or are labeled est.
 - [ ] No overlap with an existing agent or skill without a reason
+- [ ] Model set and explained in docs/agent-brains.md; personality is distinct from the others; knowledge folder exists
 - [ ] Routing, roster, and CLAUDE.md are updated
 - [ ] The validator passes
 - [ ] The team stays within 10–50 agents

@@ -28,7 +28,7 @@ A consultant is advising on launching an **independent trade book publisher in W
 | `docs/08-risks.md` | Ranked risk register |
 | `docs/expert-roster.md` | Team roles and the skill map |
 
-**Read the relevant doc before answering.** Don't rely on memory for numbers that are in the docs.
+Each agent also has a private folder, `knowledge/<agent-name>/`. **Read your knowledge folder first, then the relevant doc, before answering.** Don't rely on memory for numbers that are in the docs.
 
 ## Key facts
 - US publishing $33.4B (2025, +2.5%). Trade $21.7B. Religious +9.3%. Print ≈73% of trade. Audio is growing. *(AAP)*
