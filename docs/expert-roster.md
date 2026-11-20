@@ -153,3 +153,26 @@ The expert advisors a consultant needs for launching an independent, PRH-style t
 - **Suggested first wave**, matching the top-3 risks in [08-risks.md](08-risks.md): A15 Finance & Capital Planner, A06 Sales & Distribution Manager, A04 Editorial & Acquisitions Director, plus A01 to coordinate them.
 - **Optional consolidation** for a smaller team: merge A05 into A04, A07 into A06, A10 into A08, A16 into A15, A19 into A18, A23 and A24 into A21, and A13 into A14. That leaves a 16-agent core.
 - **Legal agents advise; they don't replace counsel.** The legal agents (A18–A20) should flag issues for review by a licensed Florida attorney.
+
+## Part 4: Built team (Claude Code)
+
+The roster is implemented as project subagents in `.claude/agents/` and project skills in `.claude/skills/`. Roster IDs map to agent file names (A01 → `engagement-coordinator`, A15 → `finance-capital-planner`, etc.). Each skill's `metadata.roster-id` and `used-by` record the wiring.
+
+**Additional agents**
+| ID | Agent | One-line job description |
+|---|---|---|
+| A26 | **Orchestrator** (`orchestrator`) | Takes any question, picks the experts, has them work together in parallel briefs and a collaboration round, and returns one combined answer. |
+| A27 | **Team Architect** (`team-architect`) | Meta agent that creates new agents and skills and improves existing ones, keeping the roster, routing, and CLAUDE.md in sync. |
+
+**Additional skills**
+| ID | Skill | Used by |
+|---|---|---|
+| S36 | `project-research-library`: project context, key facts, conventions | All 27 agents |
+| S37 | `expert-team-routing`: who owns what, plus standard panels | orchestrator, engagement-coordinator, team-architect |
+| S38 | `agent-skill-authoring`: how to create and improve agents and skills | team-architect |
+| S39 | `ask-the-team`: `/ask-the-team` command (runs in orchestrator) | Consultant |
+| S40 | `evolve-team`: `/evolve-team` command (runs in team-architect) | Consultant |
+
+The orchestrator also preloads `cross-agent-synthesis` and `risk-assessment`. The team-architect also preloads `web-research-citation`.
+
+**Totals:** 27 agents, 40 skills.

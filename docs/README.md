@@ -29,6 +29,7 @@ bookstores, online retailers and libraries.
 | 7 | Marketing | [07-marketing.md](07-marketing.md) | Title marketing, trade marketing, local channels, brand building |
 | 8 | Biggest risks | [08-risks.md](08-risks.md) | Ranked risk register with mitigations |
 | — | **Expert roster** | [expert-roster.md](expert-roster.md) | 25 expert agent roles + 35 shared skills, with which agents use each skill |
+| — | **Agent team** | [../CLAUDE.md](../CLAUDE.md) | How to use the 27 built agents and 40 skills in `.claude/` |
 
 ## Key takeaways
 
