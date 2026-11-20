@@ -27,14 +27,5 @@ Ranked by **likelihood × impact** for a new independent trade publisher in West
 2. **Distribution strategy and path to a full-service distributor** (Sales/Distribution agent).
 3. **Editorial director hire plus a first-list acquisition strategy** (Editorial agent).
 
-## Suggested expert agents for the next phase
-| Agent | Owns docs |
-|---|---|
-| Market & Strategy Analyst | 01, 02, 03 |
-| Finance & Capital Planner | 04 |
-| Legal & Compliance Advisor | 05 |
-| Talent & Org Designer | 06 |
-| Marketing & Publicity Lead | 07 |
-| Risk Manager | 08 (cross-cutting) |
-| Editorial / Acquisitions Director | 02, 03, 06 |
-| Sales & Distribution Manager | 02, 04, 08 |
+## Expert agents for the next phase
+See **[expert-roster.md](expert-roster.md)** for the full team: 25 agent roles with job descriptions, 35 shared skills, and which agents use each skill. The top-3 risks above map to its suggested first wave (A15 Finance & Capital Planner, A06 Sales & Distribution Manager, A04 Editorial & Acquisitions Director, coordinated by A01).
