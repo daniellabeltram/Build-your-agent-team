@@ -28,6 +28,7 @@ bookstores, online retailers and libraries.
 | 6 | Staffing | [06-staffing.md](06-staffing.md) | Roles, salaries, phased hiring plan, freelancers |
 | 7 | Marketing | [07-marketing.md](07-marketing.md) | Title marketing, trade marketing, local channels, brand building |
 | 8 | Biggest risks | [08-risks.md](08-risks.md) | Ranked risk register with mitigations |
+| — | **Expert roster** | [expert-roster.md](expert-roster.md) | 25 expert agent roles + 35 shared skills, with which agents use each skill |
 
 ## Key takeaways
 
