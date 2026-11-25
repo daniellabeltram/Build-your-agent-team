@@ -8,6 +8,9 @@ This repository holds an expert advisory team of 27 Claude Code subagents and 40
 - `.claude/skills/<name>/SKILL.md`: shared skills. Each agent preloads its skills through the `skills:` frontmatter list
 - `.claude/scripts/validate_team.py`: checks frontmatter, skill wiring, and routing coverage
 - `knowledge/<agent-name>/`: per-agent documents. Each agent reads its folder before every answer (the README says what belongs there)
+- `web/`: React + Netlify web app for chatting with the team (reads agents, skills, knowledge and docs at build time; see `web/README.md`). `netlify.toml` at the root builds it
+- `sdk/`: Agent SDK command-line script to ask Celeste a question
+- `exports/`: packaged claude.ai skills
 - `work/<agent-name>/`: where agents save deliverables (created on demand)
 
 ## How to use the team

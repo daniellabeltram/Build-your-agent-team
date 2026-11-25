@@ -1,0 +1,33 @@
+{
+  "name": "expert-team-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Chat with the West Palm Beach publishing expert team (React + Netlify Functions)",
+  "scripts": {
+    "team": "node scripts/build-team.mjs",
+    "predev": "npm run team",
+    "dev": "vite",
+    "prebuild": "npm run team",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node scripts/smoke-test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.14.0",
+    "@netlify/blobs": "^11.1.11",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.3.0",
+    "esbuild": "^0.28.2",
+    "vite": "^8.3.8",
+    "yaml": "^2.9.1"
+  }
+}
