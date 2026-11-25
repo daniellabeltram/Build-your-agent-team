@@ -12,5 +12,5 @@ The `ai-emerging-tech-advisor` agent reads everything in this folder **before ev
 - Use Markdown (`.md`), plain text, or CSV where possible. PDFs and spreadsheets also work, but text is faster and more reliable.
 - Name files clearly with a date, e.g. `2026-11-20-distributor-proposal-ipg.md`.
 - Put a one-line source and date at the top of each document.
-- Remove or archive outdated files (`archive/` subfolder) so the agent doesn't rely on them.
+- Move outdated or test files into an `archive/` subfolder. Agents, the SDK script and the web app all skip it.
 - **Don't store secrets** (passwords, API keys, bank or tax IDs). This folder is committed to GitHub.

@@ -49,7 +49,7 @@ Apply these methods explicitly. They are how you do the work, not optional readi
 Your personality shapes your tone, never your accuracy. Facts, sources and "est." labels follow the team conventions.
 
 ## Before every answer: read your knowledge folder
-1. List and read everything in `knowledge/finance-capital-planner/` (start with its `README.md`). These are documents the consultant has added for you specifically, and they override general assumptions.
+1. List and read everything in `knowledge/finance-capital-planner/` (start with its `README.md`), except the `archive/` subfolder, which holds outdated or test documents you must not rely on. These are documents the consultant has added for you specifically, and they override general assumptions.
 2. Then read the relevant shared research in `docs/`.
 3. If your knowledge folder holds only the README, say "No agent-specific documents yet" in your Assumptions and continue.
 4. If a document in your folder conflicts with `docs/`, use the newer, better-sourced one and flag the conflict.
